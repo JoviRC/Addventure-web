@@ -1,0 +1,83 @@
+<div class="mainContent">
+  <div class="header">
+    <div class="contHead">
+      <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/logo%20Addventure-morado.png?alt=media&token=89e904d3-2d97-444e-9295-0bf73b7b8381" alt="" class="logo">
+    </div>
+  </div>
+  <div class="divMenu">
+    <div class="divBtnsMenu">
+      <div class="divNameProfe" *ngFor="let usuario of arUser">
+        <h1 class="h1NameProfe">Profesor: {{usuario.name}} {{usuario.lastname}}</h1>
+    </div>
+      <button class="btn-menu" [routerLink]="['/home']">Inicio</button>
+      <button class="btn-menu" [routerLink]="['/alumnos']">Alumnos</button>
+      <button class="btnHome" [routerLink]="['/misiones']">Misiones</button>
+      <button class="btn-menu" [routerLink]="['/recompensas']">Recompensas</button>
+      <button class="btn-menu" [routerLink]="['/addgametres']">Agregar Quiz</button>
+      <button class="btn-menu" [routerLink]="['/graficos']">Información</button>
+    </div>
+  </div>
+  <div class="divContenido">
+
+    <div class="divFroMis">
+      <div class="divTitulo" *ngFor="let usuario of arUser">
+        <h1 class="h1Class">{{usuario.curso}}</h1>
+        <h1 class="h1School">{{usuario.school}}</h1>
+      </div>
+      <div class="divSelectMis">
+        <h1 class="h1TipoMis">Tipo de Juego: </h1>
+        <h1 class="h1Recompensa">Recomensa</h1>
+        <div class="SelectGame">
+          <button class="btnGame"  id="imgGameOne" (click)="fnOffBtnOne()"><img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/GameOne.png?alt=media&token=47dd25cf-58fb-4522-b332-d3be640bf0d0" alt="" class="imgGameOne"></button>
+          <button class="btnGame" id="imgGameTwo" (click)="fnOffBtnTwo()"><img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/GameTwo.png?alt=media&token=e6f8a4d2-38dc-490b-8953-797fed5fe456" alt="" class="imgGameTwo"></button>
+          <button class="btnGame" id="imgGameThree" (click)="fnOffBtnThree()"><img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/gameThree.png?alt=media&token=87afdc94-7acc-474d-86ff-e573383daf9c" alt="" class="imgGameThree"></button>
+        </div>
+        <div class="divCoins">
+          <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/coin.gif?alt=media&token=88bc2eff-9caa-4cfd-b832-ac39615e85d2" alt="" class="coin">
+          <input [(ngModel)]="inputCoins" type="number" class="inputCoins" max="9999" min="1" maxlength="4" >
+        </div>
+      </div>
+      <div class="divBtnSubmit">
+        <button class="btnSubmit" (click)="fnFilterMis()">Agregar</button>
+        <button class="btnClean" (click)="fnBTNLimpiar()" >Limpiar</button>
+      </div>
+      <div class="divTable">
+        <table>
+          <tr>
+
+            <th class="thLeft">Alumnos</th>
+            <th class="thtabla">Juego</th>
+            <th class="thtabla">Coins</th>
+            <th class="thtabla">Estado</th>
+            <th class="thRight">Eliminar</th>
+          </tr>
+          <tr *ngFor="let misiones of arMisiones" >
+            <td class="tdLefttabla">{{misiones.name}} {{misiones.lastname}}</td>
+            <td class="tdtabla">{{misiones.tipoJuego}}</td>
+            <td class="tdtabla" >{{misiones.coin}}</td>
+            <td class="tdtabla" ><img src="../../../assets/img/{{misiones.estado}}.png" alt="" class="imgestado" style="height: 3.5vh;"></td>
+            <td class="tdRigthtabla"><button class="btnBorrar" (click)="fnDeletMis(misiones)">X</button></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="area">
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

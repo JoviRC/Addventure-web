@@ -1,0 +1,175 @@
+<div class="mainContent">
+  <div class="header">
+    <div class="contHead">
+      <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/logo%20Addventure-morado.png?alt=media&token=89e904d3-2d97-444e-9295-0bf73b7b8381" alt="" class="logo">
+    </div>
+  </div>
+  <div class="divMenu">
+    <div class="divBtnsMenu">
+      <div class="divNameProfe" *ngFor="let usuario of arUser">
+        <h1 class="h1NameProfe">Profesor: {{usuario.name}} {{usuario.lastname}}</h1>
+      </div>
+      <button class="btn-menu" [routerLink]="['/home']">Inicio</button>
+      <button class="btn-menu" [routerLink]="['/alumnos']">Alumnos</button>
+      <button class="btn-menu" [routerLink]="['/misiones']">Misiones</button>
+      <button class="btn-menu" [routerLink]="['/recompensas']">Recompensas</button>
+      <button class="btnHome" [routerLink]="['/addgametres']">Agregar Quiz</button>
+      <button class="btn-menu" [routerLink]="['/graficos']">Información</button>
+    </div>
+  </div>
+  <div class="divContenido">
+    <div class="divAddGame">
+      <!-- Separador-->
+      <div class="divSelectGame" id="divSelectGame">
+        <h3 class="h3tipo" id="h3tipo">Tipo Juego</h3>
+        <select name="selectAlt" id="selectAlt" class="selectAlt" [(ngModel)]="selectAlt">
+          <option value="Suma">Suma</option>
+          <option value="Resta">Resta</option>
+          <option value="Numero">Numero</option>
+          <option value="Contar">Contar</option>
+        </select>
+        <button class="btnSubmitJuego" id="submitGame" (click)="fnSelectNum()">Sleccionar</button>
+      </div>
+      <!-- Separador div-->
+      <div class="divcontentgameSuma" id="divcontentgameSuma" style="display: none;">
+        <!-- Separador-->
+        <h2 class="h2enunciado" id="h2enunciado" style="grid-row: 1; grid-column: 1;">Enunciado</h2>
+        <input type="number" placeholder="Numero 1" [(ngModel)]="inputNumOne" class="inputEnun1" id="inputEnun1" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <input type="number" placeholder="Numero 2" [(ngModel)]="inputNumTwo" class="inputEnun2" id="inputEnun2" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <!-- Separador-->
+        <h2 class="h2tipoEnunciado" style="grid-row: 1; grid-column: 2;">Tipo de enunciado</h2>
+        <select name="tipoAlt" id="tipoEncu" class="tipoEncu" style="grid-row: 2; grid-column: 2;"
+          [(ngModel)]="tipoEncu">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2tipoAlt" id="h2tipoAlt" style="grid-row: 1; grid-column: 3;">Tipo de alternativa</h2>
+        <select name="tipoAlt" id="tipoAlt" class="tipoAlt" style="grid-row: 2; grid-column: 3;" [(ngModel)]="tipoAlt">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2inputAlt" id="h2inputAlt" style="grid-row: 1; grid-column: 4;">Alternativas</h2>
+        <input type="number" placeholder="Falsa 1" [(ngModel)]="inputAlt2" class="inputAlt2" id="inputAlt2" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <input type="number" placeholder="Falsa 2" [(ngModel)]="inputAlt3" class="inputAlt3" id="inputAlt3" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <!-- Separador-->
+      </div>
+      <!-- Separador div-->
+      <div class="divcontentgameResta" id="divcontentgameResta" style="display: none;">
+        <!-- Separador-->
+        <h2 class="h2enunciado" id="h2enunciado" style="grid-row: 1; grid-column: 1;">Enunciado</h2>
+        <input type="number" placeholder="Numero 1" [(ngModel)]="inputNumOne" class="inputEnun1" id="inputEnun1" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <input type="number" placeholder="Numero 2" [(ngModel)]="inputNumTwo" class="inputEnun2" id="inputEnun2" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <!-- Separador-->
+        <h2 class="h2tipoEnunciado" style="grid-row: 1; grid-column: 2;">Tipo de enunciado</h2>
+        <select name="tipoAlt" id="tipoEncu" class="tipoEncu" style="grid-row: 2; grid-column: 2;"
+          [(ngModel)]="tipoEncu">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2tipoAlt" id="h2tipoAlt" style="grid-row: 1; grid-column: 3;">Tipo de alternativa</h2>
+        <select name="tipoAlt" id="tipoAlt" class="tipoAlt" style="grid-row: 2; grid-column: 3;" [(ngModel)]="tipoAlt">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2inputAlt" id="h2inputAlt" style="grid-row: 1; grid-column: 4;">Alternativas</h2>
+        <input type="number" placeholder="Falsa 1" [(ngModel)]="inputAlt2" class="inputAlt2" id="inputAlt2" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <input type="number" placeholder="Falsa 2" [(ngModel)]="inputAlt3" class="inputAlt3" id="inputAlt3" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <!-- Separador-->
+      </div>
+      <!-- Separador div-->
+      <div class="divcontentgameContar" id="divcontentgameContar" style="display: none;">
+        <!-- Separador-->
+        <h2 class="h2enunciado" id="h2enunciado" style="grid-row: 1; grid-column: 1;">Enunciado</h2>
+        <input type="number" placeholder="Numero 1" [(ngModel)]="inputNumOne" class="inputEnun1" id="inputEnun1" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <!-- Separador-->
+        <h2 class="h2tipoEnunciado" style="grid-row: 1; grid-column: 2;">Tipo de enunciado</h2>
+        <select name="tipoAlt" id="tipoEncu" class="tipoEncu" style="grid-row: 2; grid-column: 2;"
+          [(ngModel)]="tipoEncu">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2tipoAlt" id="h2tipoAlt" style="grid-row: 1; grid-column: 3;">Tipo de alternativa</h2>
+        <select name="tipoAlt" id="tipoAlt" class="tipoAlt" style="grid-row: 2; grid-column: 3;" [(ngModel)]="tipoAlt">
+          <option value="Numeros" placeholder="Numeros">Numeros</option>
+          <option value="Animales" placeholder="Animales">Animales</option>
+        </select>
+        <!-- Separador-->
+        <h2 class="h2inputAlt" id="h2inputAlt" style="grid-row: 1; grid-column: 4;">Alternativas</h2>
+        <input type="number" placeholder="Falsa 1" [(ngModel)]="inputAlt2" class="inputAlt2" id="inputAlt2" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <input type="number" placeholder="Falsa 2" [(ngModel)]="inputAlt3" class="inputAlt3" id="inputAlt3" max="9"
+          min="1" style="grid-row: 2; grid-column: 4;">
+        <!-- Separador-->
+      </div>
+      <!-- Separador div-->
+      <div class="divcontentgameNumeros" id="divcontentgameNumeros" style="display: none;">
+        <!-- Separador-->
+        <h2 class="h2enunciado" id="h2enunciado" style="grid-row: 1; grid-column: 1;">Enunciado</h2>
+        <input type="number" placeholder="Numero 1" [(ngModel)]="inputNumOne" class="inputEnun1" id="inputEnun1" max="9"
+          min="1" style="grid-row: 2; grid-column: 1;">
+        <!-- Separador-->
+        <h2 class="h2inputAlt" id="h2inputAlt" style="grid-row: 1; grid-column: 2;">Alternativas</h2>
+        <input type="number" placeholder="Falsa 1" [(ngModel)]="inputAlt2" class="inputAlt2" id="inputAlt2" max="9"
+          min="1" style="grid-row: 2; grid-column: 2;">
+        <input type="number" placeholder="Falsa 2" [(ngModel)]="inputAlt3" class="inputAlt3" id="inputAlt3" max="9"
+          min="1" style="grid-row: 2; grid-column: 2;">
+        <!-- Separador-->
+      </div>
+      <!-- Separador div-->
+      <button class="btsmit" id="btsmit" (click)="fngenerateuid()" style="display: none;;">Agregar</button>
+      <button class="btlclear" id="btlclear" (click)="btnClear()"
+        style="display: none; margin-bottom: 2vh;">Limpiar</button>
+
+      <div class="divTable">
+        <table>
+          <tr>
+
+            <th class="thLeft">Tipo Juego</th>
+            <th class="thtabla">Alt Correcta</th>
+            <th class="thtabla">Distractor 1</th>
+            <th class="thtabla">Distractor 2</th>
+            <th class="thRight">Eliminar</th>
+          </tr>
+          <tr *ngFor="let gameThree of arGame">
+            <td class="tdLefttabla">{{gameThree.actividad}}</td>
+            <td class="tdtabla">{{gameThree.altBueno}}</td>
+            <td class="tdtabla">{{gameThree.altMaloUno}}</td>
+            <td class="tdtabla">{{gameThree.altMaloDos}}</td>
+            <td class="tdRigthtabla"><button class="btnBorrar" (click)="fnDeletGame(gameThree)">X</button></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="area">
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

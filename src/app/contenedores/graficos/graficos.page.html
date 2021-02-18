@@ -1,0 +1,95 @@
+<div class="mainContent">
+    <div class="header">
+        <div class="contHead">
+            <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/logo%20Addventure-morado.png?alt=media&token=89e904d3-2d97-444e-9295-0bf73b7b8381" alt="" class="logo">
+        </div>
+    </div>
+    <div class="divMenu">
+        <div class="divBtnsMenu">
+            <div class="divNameProfe" *ngFor="let usuario of arUser">
+                <h1 class="h1NameProfe">Profesor: {{usuario.name}} {{usuario.lastname}}</h1>
+            </div>
+            <button class="btn-menu" [routerLink]="['/home']">Inicio</button>
+            <button class="btn-menu" [routerLink]="['/alumnos']">Alumnos</button>
+            <button class="btn-menu" [routerLink]="['/misiones']">Misiones</button>
+            <button class="btn-menu" [routerLink]="['/recompensas']">Recompensas</button>
+            <button class="btn-menu" [routerLink]="['/addgametres']">Agregar Quiz</button>
+            <button class="btnHome" [routerLink]="['/graficos']">Información</button>
+        </div>
+    </div>
+    <div class="divContenido">
+        <div class="divTableAlumnos">
+            <table>
+                <tr>
+                    <th class="thLeft">Alumnos</th>
+                    <th class="thRight">Juegos</th>
+                </tr>
+                <tr *ngFor="let alumnos of arAlumn">
+                    <td class="tdLefttabla">{{alumnos.nomAlumn}} {{alumnos.apeAlumn}}</td>
+                    <td class="tdRigthtabla"><button class="btnGameOne" (click)="fnReadGameOne(alumnos)">Numeros</button><button class="btnGameTwo" (click)="fnReadGameTwo(alumnos)">Suma
+                            y Resta</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="divTableDatosGameOne"  id="divTableDatosGameOne" style="display: none;">
+            <table>
+                <tr>
+                    <th class="thLeft">Nivel 1</th>
+                    <th class="thtabla">Nivel 2</th>
+                    <th class="thtabla">Nivel 3</th>
+                    <th class="thtabla">Malas</th>
+                    <th class="thtabla">Total Jugadas</th>
+                    <th class="thRight">Tiempo Jugado (seg)</th>
+                </tr>
+                <tr *ngFor="let gameOne of arDatosGameOne">
+                    <td class="tdLefttabla">{{gameOne.cantLevelOne}}</td>
+                    <td class="tdtabla">{{gameOne.cantLevelTwo}}</td>
+                    <td class="tdtabla">{{gameOne.cantLevelThree}}</td>
+                    <td class="tdtabla">{{gameOne.contMalas}}</td>
+                    <td class="tdtabla">{{gameOne.contTotal}}</td>
+                    <td class="tdRigthtabla">{{gameOne.timeTotal}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="divTableDatosGameTwo"  id="divTableDatosGameTwo" style="display: none;">
+            <table>
+                <tr>
+                    <th class="thLeft">Nivel 1</th>
+                    <th class="thtabla">Nivel 2</th>
+                    <th class="thtabla">Nivel 3</th>
+                    <th class="thtabla">Restas Totales</th>
+                    <th class="thtabla">Restas Erradas</th>
+                    <th class="thtabla">Sumas Totales</th>
+                    <th class="thtabla">Sumas Erradas</th>
+                    <th class="thRight">Tiempo Jugado (seg)</th>
+                </tr>
+                <tr *ngFor="let gameTwo of arDatosGameTwo">
+                    <td class="tdLefttabla">{{gameTwo.cantLevelOne}}</td>
+                    <td class="tdtabla">{{gameTwo.cantLevelTwo}}</td>
+                    <td class="tdtabla">{{gameTwo.cantLevelThree}}</td>
+                    <td class="tdtabla">{{gameTwo.contResta}}</td>
+                    <td class="tdtabla">{{gameTwo.contRestasMalas}}</td>
+                    <td class="tdtabla">{{gameTwo.contSuma}}</td>
+                    <td class="tdtabla">{{gameTwo.contSumasMalas}}</td>
+                    <td class="tdRigthtabla">{{gameTwo.timeTotal}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="area">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

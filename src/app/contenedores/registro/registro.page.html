@@ -1,0 +1,58 @@
+<div class="mainContent">
+    <div class="header">
+        <div class="contHead">
+            <img src="../../assets/img/logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="divMenu">
+        <div class="divMenuContentRegistro" id="divMenuContentRegistro ">
+            <div class="divTituloReg">
+                <h1 class="h1TituloReg">
+                    Registro
+                </h1>
+            </div>
+            <div class="divImputReg " id="divInputSerial ">
+                <input [(ngModel)]="email" id="correo" type="text" placeholder="Correo" required="true" autofocus="true" class="inputReg" tabindex="1" maxlength="30 ">
+                <input [(ngModel)]="emailComp" id="correo2" type="text" placeholder="Correo nuevamente" required="true" class="inputReg" tabindex="2" maxlength="30 ">
+                <input [(ngModel)]="name" id="nombre " type="text" placeholder="Nombre" required="true" class="inputReg" tabindex="3" maxlength="15">
+                <input [(ngModel)]="lastname" id="apellido " type="text" placeholder="Apellido" required="true" class="inputReg" tabindex="4" maxlength="15">
+                <input [(ngModel)]="school" id="colegio " type="text" placeholder="Colegio" required="true" class="inputReg" tabindex="5" maxlength="30">
+                <label for="curso">Seleccione Curso</label>
+                <select [(ngModel)]="curso" class="inputReg" name="curso" id="curso" tabindex="6" placeholder="Curso">
+                    <option value="Primero A ">Primero A</option>
+                    <option value="Primero B ">Primero B</option>
+                    <option value="Primero C ">Primero C</option>
+                    <option value="Primero D ">Primero D</option>
+                    <option value="Primero E ">Primero E</option>
+                </select>
+                <input [(ngModel)]="password" id="clave" type="password" placeholder="Clave" required="true" class="inputReg" tabindex="7" maxlength="20">
+                <input [(ngModel)]="passCon" id="clave2" type="password" placeholder="Nuevamente su Clave" required="true" class="inputReg" tabindex="8" maxlength="20">
+            </div>
+            <div class="divBtnRegister ">
+                <button class="btnSubmit " type="submit" (click)="OnSubmitRegister()">Finalizar</button>
+                <button class="btnBack " (click)="fnBackRegister() ">Volver</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="divContenido ">
+        <img src="../../assets/img/AdventureIMG.jpg " alt=" " class="imgAdd ">
+    </div>
+</div>
+
+
+<div class="area ">
+    <ul class="circles ">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

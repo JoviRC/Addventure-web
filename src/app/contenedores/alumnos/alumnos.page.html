@@ -1,0 +1,60 @@
+<div class="mainContent">
+    <div class="header">
+        <div class="contHead">
+            <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/logo%20Addventure-morado.png?alt=media&token=89e904d3-2d97-444e-9295-0bf73b7b8381" alt="" class="logo">
+        </div>
+    </div>
+    <div class="divMenu">
+        <div class="divBtnsMenu">
+            <div class="divNameProfe" *ngFor="let usuario of arUser">
+                <h1 class="h1NameProfe">Profesor: {{usuario.name}} {{usuario.lastname}}</h1>
+            </div>
+            <button class="btn-menu" [routerLink]="['/home']">Inicio</button>
+            <button class="btnHome"  [routerLink]="['/alumnos']">Alumnos</button>
+            <button class="btn-menu" [routerLink]="['/misiones']">Misiones</button>
+            <button class="btn-menu" [routerLink]="['/recompensas']">Recompensas</button>
+            <button class="btn-menu" [routerLink]="['/addgametres']">Agregar Quiz</button>
+            <button class="btn-menu" [routerLink]="['/graficos']">Información</button>
+        </div>
+    </div>
+    <div class="divContenido">
+        <div class="divTitulo" *ngFor="let usuario of arUser">
+            <h1 class="h1Class">{{usuario.curso}}</h1>
+            <h1 class="h1School">{{usuario.school}}</h1>
+        </div>
+        <div class="divTablaAlumnos">
+
+            <table >
+                <tr>
+                    <th class="thLeft">Nombre</th>
+                    <th class="thtabla">Nivel</th>
+                    <th class="thtabla">Apoderado</th>
+                    <th class="thRight">Monedas</th>
+                </tr>
+                <tr *ngFor="let alumnos of arAlumn">
+                    <td class="tdLefttabla">{{alumnos.nomAlumn}} {{alumnos.apeAlumn}}</td>
+                    <td class="tdtabla">{{alumnos.level}}</td>
+                    <td class="tdtabla">{{alumnos.nomApod}} {{alumnos.apeApod}}</td>
+                    <td class="tdRigthtabla">{{alumnos.coin}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="area">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+<div class="mainContent">
+    <div class="header">
+        <div class="contHead">
+            <img src="../../assets/img/logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="divMenu">
+        <div class="divBtnsMenu">
+            <button class="btnHome" [routerLink]="['/home']">Inicio</button>
+            <button class="btn-menu"  [routerLink]="['/alumnos']">Alumnos</button>
+            <button class="btn-menu" [routerLink]="['/misiones']">Misiones</button>
+            <button class="btn-menu" [routerLink]="['/recompensas']">Recompensas</button>
+            <button class="btn-menu" [routerLink]="['/addgametres']">Agregar Quiz</button>
+            <button class="btn-menu" [routerLink]="['/graficos']">Información</button>
+        </div>
+    </div>
+    <div class="divContenido" *ngFor="let usuario of arUser">
+        <div class="divWellcome">
+            <h1 class="h1wellcome">Bienvenido</h1>
+            <h1 class="h1Name">{{usuario.name}} {{usuario.lastname}}</h1>
+            <button class="LogOut" (click)=" logOut()">Salir</button>
+        </div>
+    </div>
+</div>
+
+<div class="area">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "Addventure",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,90 @@
+<div class="mainContent">
+    <div class="header">
+        <div class="contHead">
+            <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/logo%20Addventure-morado.png?alt=media&token=89e904d3-2d97-444e-9295-0bf73b7b8381" alt="" class="logo">
+        </div>
+    </div>
+    <div class="divMenu">
+        <div class="divMenuContentLogin" id="divMenuContentLogin">
+            <div class="divTitulo">
+                <h1 class="h1Titulo">
+                    Inicio Sesión
+                </h1>
+            </div>
+            <div class="divImput">
+                <input [(ngModel)]="email" id="emailLog" type="email" placeholder="Correo" required="true" autofocus="true" class="inputLogin" inputmode="email" tabindex="1" maxlength="30">
+                <input [(ngModel)]="password" id="passwordLog" type="password" placeholder="password" required maxlength="20" class="inputLogin" tabindex="2">
+            </div>
+            <div class="divBtnLogin ">
+                <button class="btnSubmit " type="submit" (click)="onSubmintLogin()">Acceder</button>
+                <button class=" btnRegistrar " (click)="fnOpenRegisterSerial()">Registrar</button>
+            </div>
+        </div>
+
+        <div class="divMenuContentSerial" id="divMenuContentSerial" style="display: none;">
+            <div class="divTitulo ">
+                <h1 class="h1Titulo ">
+                    Registro Serial
+                </h1>
+            </div>
+            <div class="divImput " id="divInputSerial ">
+                <input [(ngModel)]="key" id="Serial " type="text " placeholder="Serial " required="true " autofocus="true " class="inputReg " tabindex="1 " maxlength="30 ">
+            </div>
+            <div class="divBtnLogin ">
+                <button class="btnSubmit " type="submit " (click)="onSubmitSerial()">Siguiente</button>
+                <button class="btnBack " (click)="fnBackRegister() ">Volver</button>
+            </div>
+        </div>
+
+        <div class="divMenuContentRegistro" id="divMenuContentRegistro " style="display: none;">
+            <div class="divTituloReg">
+                <h1 class="h1TituloReg">
+                    Registro
+                </h1>
+            </div>
+            <div class="divImputReg " id="divInputSerial ">
+                <input id="correo " type="text " placeholder="Correo " required="true " autofocus="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <input id="correo2 " type="text " placeholder="Correo nuevamente " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <input id="nombre " type="text " placeholder="Nombre " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <input id="apellido " type="text " placeholder="Apellido " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <input id="colegio " type="text " placeholder="Colegio " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <select class="inputReg " name="curso " id="curso ">
+            <option value=" " selected disabled>Seleccione un Curso</option>
+            <option value="PrimeroA ">Primero A</option>
+            <option value="PrimeroB ">Primero B</option>
+            <option value="PrimeroC ">Primero C</option>
+            <option value="PrimeroD ">Primero D</option>
+            <option value="PrimeroE ">Primero E</option>
+          </select>
+                <input id="clave " type="text " placeholder="Clave " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+                <input id="clave2 " type="text " placeholder="Nuevamente su Clave " required="true " class="inputReg " tabindex="1 " maxlength="30 ">
+            </div>
+            <div class="divBtnRegister ">
+                <button class="btnSubmit " type="submit ">Finalizar</button>
+                <button class="btnBack " (click)="fnBackRegister() ">Volver</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="divContenido ">
+        <img src="https://firebasestorage.googleapis.com/v0/b/addventure-81611.appspot.com/o/AdventureIMG.jpg?alt=media&token=4f44d988-c7b2-49d5-9c2c-fb364ca27fe9" alt=" " class="imgAdd ">
+    </div>
+</div>
+
+
+<div class="area ">
+    <ul class="circles ">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
